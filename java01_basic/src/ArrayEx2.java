@@ -1,0 +1,53 @@
+import java.util.Scanner;
+class ArrayEx2 
+{
+	public static void main(String[] args) 
+	{
+		Scanner scan = new Scanner(System.in);
+		
+		String title[] = {"국어","영어","수학","사회","국사","도덕","물리","화학","지리학"};
+		int jumsu[] = new int[9];
+		
+		for(int idx=0; idx<title.length; idx++){ //0부터 8까지
+			System.out.print(title[idx]+"=");
+			jumsu[idx] = scan.nextInt(); //jumsu[idx]에 입력한걸 넣는다.
+	
+		}
+
+		//총점
+		int tot=0;
+		for(int j : jumsu ){
+			tot+=j;
+			
+		}
+		//평균
+		double ave = tot/9.0;
+		
+		//학점
+		String grade="";
+		switch((int)(ave/10)){//0,1,2,3....10
+			case 10: case 9: grade = "A"; break;
+			case 8: grade = "B"; break;
+			case 7: grade = "C"; break;
+			case 6: grade = "D"; break;
+			default: grade = "F";
+		}
+		System.out.println("총점 ="+tot);
+		System.out.println("평균="+ave);
+		System.out.println("학점="+grade);
+	}
+}
+/*
+실행
+국어=
+영어=
+수학=
+:
+:
+:
+총점 = ___
+평균 = ___
+학점 = ___
+
+
+*/
